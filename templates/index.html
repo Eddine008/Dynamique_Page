@@ -1,0 +1,18 @@
+{{ define "title" }}Accueil{{ end }}
+
+{{ define "content" }}
+<div class="product-list">
+    {{ range .Products }}
+    <div class="product-card">
+        <img src="{{ .ImageURL }}" alt="{{ .Name }}">
+        <h2>{{ .Name }}</h2>
+        <p>Prix : {{ fmtPrice .Price }}</p>
+        {{ if gt .DiscountPct 0 }}
+        <p>Réduction : {{ .DiscountPct }}%</p>
+        <p>Prix réduit : {{ fmtPrice (discountedPrice .Price .DiscountPct) }}</p>
+        {{ end }}
+        <a class="btn" href="/product/{{ .ID }}">Voir le produit</a>
+    </div>
+      {{ end }}
+</div>
+{{ end }}

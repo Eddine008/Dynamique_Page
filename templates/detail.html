@@ -1,0 +1,16 @@
+{{ define "title" }}Détails Produit{{ end }}
+
+{{ define "content" }}
+<div class="product-card" style="margin:2em auto; width:300px;">
+    <img src="{{ .Product.ImageURL }}" alt="{{ .Product.Name }}">
+    <h2>{{ .Product.Name }}</h2>
+    <p>{{ .Product.Description }}</p>
+    <p>Prix : {{ fmtPrice .Product.Price }}</p>
+    <p>Stock : {{ .Product.InStock }}</p>
+    {{ if gt .Product.DiscountPct 0 }}
+       <p>Réduction : {{ .Product.DiscountPct }}%</p>
+    <p>Prix après réduction : {{ fmtPrice (discountedPrice .Product.Price .Product.DiscountPct) }}</p>
+    {{ end }}
+    <a class="btn" href="/">Retour</a>
+</div>
+{{ end }}
