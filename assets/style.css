@@ -1,63 +1,245 @@
 * {
-margin: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-  color: #333;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 header {
-  background-color: #222;
-  color: white;
-  padding: 1em;
+
+  background-color: #111;
+  padding: 20px 50px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav img.logo {
+  height: 40px;
 }
 
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  margin: 0 1em;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.2s ease;
 }
+
+nav a::after {
+
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #e63946;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #e63946;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+main {
+  padding: 50px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
 
 .product-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 1em;
+  gap: 25px;
 }
 
 .product-card {
-  background: white;
+  background-color: #1a1a1a;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin: 1em;
-  padding: 1em;
-  width: 200px;
+  width: 220px;
+  overflow: hidden;
   text-align: center;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
 }
 
 .product-card img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 220px;
+  object-fit: cover;
 }
 
-.btn {
+.product-card h2 {
+  font-size: 15px;
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+.product-card p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.product-card p:first-of-type {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.product-card p:last-of-type {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.product-card .btn {
   display: inline-block;
-  padding: 0.5em 1em;
-  background: #007bff;
+  margin: 10px 0 12px;
+  background-color: #e63946;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.product-card .btn:hover {
+  background-color: #c92e3d;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: #fff;
+  max-width: 400px;
+  margin: 3em auto;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.detail-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.detail-container h2 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.detail-container p {
+  margin: 6px 0;
+}
+
+.detail-container .btn {
+  background-color: #e63946;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.detail-container .btn:hover {
+  background-color: #c92e3d;
+}
+
+form {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  padding: 25px 30px;
+  max-width: 400px;
+  margin: 3em auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+abel {
+  font-weight: bold;
+  font-size: 14px;
+  color: #ddd;
 }
 
 
-.btn:hover {
-  background: #0056b3;
+
+input, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #2a2a2a;
+  color: #fff;
 }
+
+nput:focus, textarea:focus {
+  outline: 2px solid #e63946;
+}
+
+button.btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+
+
+button.btn:hover {
+  background-color: #c92e3d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
